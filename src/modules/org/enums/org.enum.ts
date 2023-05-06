@@ -1,0 +1,5 @@
+export enum ORG_STATUS {
+  PENDING = 'PENDING',
+  ACTIVE = 'ACTIVE',
+  INACTIVE = 'INACTIVE',
+}

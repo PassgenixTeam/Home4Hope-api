@@ -1,0 +1,6 @@
+export enum STORY_STATUS {
+  PENDING = 'PENDING',
+  ACTIVE = 'ACTIVE',
+  INACTIVE = 'INACTIVE',
+  CLOSED = 'CLOSED',
+}

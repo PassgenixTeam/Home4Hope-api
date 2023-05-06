@@ -18,7 +18,7 @@ import {
 } from '@nestjs/swagger';
 import { UploadService } from './upload.service';
 import { Auth, AuthUser } from '../../../libs/core/src';
-import { multerMemoryOption } from '../../../libs/common/src';
+import { ROLE, multerMemoryOption } from '../../../libs/common/src';
 import { FilterFileDto } from './dto/requests/filter-file.dto';
 import { FileResponseDto } from 'src/modules/upload/dto/responses/files.response.dto';
 
@@ -38,7 +38,7 @@ export class UploadController {
   }
 
   @ApiOperation({ summary: 'Upload files' })
-  @Auth()
+  @Auth(ROLE.GUEST)
   @UseInterceptors(FilesInterceptor('files', null, multerMemoryOption))
   @ApiConsumes('multipart/form-data')
   @ApiBody({
